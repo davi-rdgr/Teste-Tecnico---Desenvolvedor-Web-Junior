@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --cinza: #cccccc;
+    --branco: #ffffff;
+    --vermelho: #ff0000;
+    --verde: #008000;
+    --amarelo: #caca04;
+    --azul_escuro: #203D4D;
+    --preto: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+section {
+    margin-bottom: 1rem;
+}
+
+/* Header: */
+
+.header_sec {
+    height: auto;
+    border-bottom: 1px solid var(--cinza);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burguer_button_content {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.burguer {
+    height: 3px;
+    width: 25px;
+    background-color: var(--azul_escuro);
+    margin: 4px;
+}
+
+.space_content {
+    width: 40px;
+    height: 3px;
+    margin: 4px;
+}
+
+.header_sec h1 {
+    font-size: 18px;
+    color: var(--azul_escuro);
+}
+
+/* Main */
+/* Área de adicionar */
+.main_form_style {
+    display: flex;
+    justify-content: center;
+}
+
+.main_input_task {
+    height: 40px;
+    border: 1px solid var(--cinza);
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 5px;
+    width: 55%;
+}
+
+.main_input_submit {
+    height: 40px;
+    /* width: 90px; */
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid var(--cinza);
+    background-color: var(--branco);
+    color: #203D4D;
+    font-weight: 500;
+
+}
+
+/* Área to-do */
+
+.todo_content,
+.do_content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.todo_content h2,
+.do_content h2 {
+    font-size: 18px;
+    color: var(--azul_escuro);
+}
+
+.todo_article {
+    min-height: 70px;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid var(--cinza);
+    border-right: 3px solid var(--verde);
+    border-top: 2px solid var(--azul_escuro);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.do_article {
+    min-height: 70px;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid var(--cinza);
+    border-right: 3px solid var(--vermelho);
+    border-top: 2px solid var(--azul_escuro);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.todo_article p,
+.do_article p {
+    font-size: 13px;
+    color: var(--preto);
+    padding-bottom: 10px;
+}
