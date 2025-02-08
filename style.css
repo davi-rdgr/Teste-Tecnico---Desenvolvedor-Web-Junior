@@ -15,6 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", serif;
+    list-style-type: none;
 }
 
 html {
@@ -62,7 +63,7 @@ section {
 }
 
 .header_sec h1 {
-    font-size: 18px;
+    font-size: 1.1rem;
     color: var(--azul_escuro);
 }
 
@@ -84,14 +85,12 @@ section {
 
 .main_input_submit {
     height: 40px;
-    /* width: 90px; */
     width: 25%;
     border-radius: 10px;
     border: 1px solid var(--cinza);
     background-color: var(--branco);
     color: #203D4D;
     font-weight: 500;
-
 }
 
 /* Área to-do */
@@ -104,14 +103,14 @@ section {
 
 .todo_content h2,
 .do_content h2 {
-    font-size: 18px;
+    font-size: 1rem;
     color: var(--azul_escuro);
 }
 
-.todo_article {
-    min-height: 70px;
+.todo_article  {
+    min-height: 4rem;
     width: 100%;
-    margin-top: 10px;
+    margin-top: .6rem;
     border: 1px solid var(--cinza);
     border-right: 3px solid var(--verde);
     border-top: 2px solid var(--azul_escuro);
@@ -120,9 +119,9 @@ section {
 }
 
 .do_article {
-    min-height: 70px;
+    min-height: 4rem;
     width: 100%;
-    margin-top: 10px;
+    margin-top: .6rem;
     border: 1px solid var(--cinza);
     border-right: 3px solid var(--vermelho);
     border-top: 2px solid var(--azul_escuro);
@@ -130,9 +129,20 @@ section {
     padding: 5px;
 }
 
-.todo_article p,
-.do_article p {
-    font-size: 13px;
+.todo_article ul li,
+.do_article ul li {
+    font-size: .8rem;
     color: var(--preto);
-    padding-bottom: 10px;
+    padding-bottom: .8rem;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+
+    body {
+        background-color: #fce9e9;
+    }
+
 }
