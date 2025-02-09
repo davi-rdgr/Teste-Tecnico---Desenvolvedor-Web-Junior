@@ -6,6 +6,7 @@
     --vermelho: #ff0000;
     --verde: #008000;
     --amarelo: #caca04;
+    --azul: #1B4AC5;
     --azul_escuro: #203D4D;
     --preto: #000000;
 }
@@ -112,10 +113,11 @@ section {
     width: 100%;
     margin-top: .6rem;
     border: 1px solid var(--cinza);
-    border-right: 3px solid var(--verde);
-    border-top: 2px solid var(--azul_escuro);
+    border-right: 3px solid var(--azul);
+    /*  border-top: 2px solid var(--azul_escuro); */
     border-radius: 5px;
     padding: 5px;
+    position: relative;
 }
 
 .done_article {
@@ -124,9 +126,9 @@ section {
     margin-top: .6rem;
     border: 1px solid var(--cinza);
     border-right: 3px solid var(--vermelho);
-    border-top: 2px solid var(--azul_escuro);
     border-radius: 5px;
     padding: 5px;
+    position: relative;
 }
 
 .todo_article ul li,
@@ -134,6 +136,7 @@ section {
     font-size: .8rem;
     color: var(--preto);
     padding-bottom: .8rem;
+    word-wrap: break-word;
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -146,6 +149,22 @@ section {
     }
 
 }
+
+.task_list_check {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+
+
+
+
+
 
 
 /* 
