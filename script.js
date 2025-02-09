@@ -1,3 +1,11 @@
+/* recupera os dados salvos no local storage e adiciona nos array to_do e done */
+document.addEventListener("DOMContentLoaded", (e) => {
+    arrayTask = JSON.parse(localStorage.getItem("to_do")) || [];
+    arrayExclude = JSON.parse(localStorage.getItem("done")) || [];
+    atualizarTodo();
+    atualizarDone();
+})
+
 /* arrays para guardar tasks to-do e done */
 let arrayTask = [];
 let arrayExclude = [];
@@ -22,29 +30,34 @@ const adicionarToDo = () => {
         task.value = "";
         atualizarTodo();
         atualizarDone();
+        salvarLocalStorage();
+        return;
     }
+    alert("Tente escrever uma mensagem para sua tarefa! :)")
 }
 
+/* função que verifica se o valor é válido, se sim, adiciona o valor da tabela to-do na done e exclui a mesma da tabela to-do */
 const adicionarDone = (ev, index) => {
     if (ev) {
         arrayExclude.push(ev);
         arrayTask.splice(index, 1)
         atualizarTodo()
         atualizarDone();
+        salvarLocalStorage();
     }
     return;
 }
 
+/* função que verifica se o valor é válido, se sim, remove o valor da tabela done */
 const removerDone = (ev, index) => {
     if (ev) {
         arrayExclude.splice(index, 1)
         atualizarTodo()
         atualizarDone();
+        salvarLocalStorage();
     }
     return;
 }
-
-
 
 /* for each que percorre o arrayTask e cria na tela todas task do array to-do. A div task_list_check contém um evento com clique
 que chama uma função que transfere a task da tabela to-do para done. */
@@ -108,3 +121,8 @@ const atualizarDone = () => {
 
 }
 
+/* função que atualiza o local storage baseado nos array to-do e done sempre que chamada. */
+const salvarLocalStorage = () => {
+    localStorage.setItem("to_do", JSON.stringify(arrayTask));
+    localStorage.setItem("done", JSON.stringify(arrayExclude));
+};
