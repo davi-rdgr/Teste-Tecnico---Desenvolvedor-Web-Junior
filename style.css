@@ -19,6 +19,8 @@
     list-style-type: none;
 }
 
+/* Mobile devices – 320px — 480px. */
+
 html {
     font-size: 16px;
 }
@@ -26,6 +28,7 @@ html {
 body {
     height: 100vh;
     width: 100vw;
+    position: relative;
 }
 
 section {
@@ -47,7 +50,7 @@ section {
 .burguer_button_content {
     display: flex;
     flex-direction: column;
-    padding: 12px;
+    padding: .9rem;
 }
 
 .burguer {
@@ -76,6 +79,7 @@ section {
 }
 
 .main_input_task {
+    font-size: .9rem;
     height: 40px;
     border: 1px solid var(--cinza);
     border-radius: 10px;
@@ -85,6 +89,7 @@ section {
 }
 
 .main_input_submit {
+    font-size: .9rem;
     height: 40px;
     width: 25%;
     border-radius: 10px;
@@ -94,7 +99,7 @@ section {
     font-weight: 500;
 }
 
-/* Área to-do */
+/* Área to-do e done */
 
 .todo_content,
 .do_content {
@@ -104,7 +109,7 @@ section {
 
 .todo_content h2,
 .do_content h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--azul_escuro);
 }
 
@@ -114,7 +119,6 @@ section {
     margin-top: .6rem;
     border: 1px solid var(--cinza);
     border-right: 3px solid var(--azul);
-    /*  border-top: 2px solid var(--azul_escuro); */
     border-radius: 5px;
     padding: 5px;
     position: relative;
@@ -133,35 +137,23 @@ section {
 
 .todo_article ul li,
 .done_article ul li {
-    font-size: .8rem;
+    font-size: .9rem;
     color: var(--preto);
     padding-bottom: .8rem;
     word-wrap: break-word;
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    html {
-        font-size: 18px;
-    }
 
-    body {
-        background-color: #fce9e9;
-    }
-
-}
-
+/* Class dos botões de confirmar as tasks feitas. Criadas por Dom */
 .task_list_check {
-    height: 20px;
-    width: 20px;
+    /*     height: 20px;
+    width: 20px; */
     position: absolute;
     top: 0;
     right: 0;
 }
 
-body {
-    position: relative;
-}
-
+/* Botão lateral e funcionalidades*/
 
 .side_menu {
     height: 100vh;
@@ -174,11 +166,10 @@ body {
 }
 
 .side_menu nav {
-    margin-top: 50px;
+    margin-top: 3rem;
+
 }
 
-
-/* arrumar */
 .button_none {
     border: none;
     color: none;
@@ -191,12 +182,61 @@ body {
 }
 
 .nav_menu {
-    height: 40px;
+    font-size: .9rem;
+    height: 2.5rem;
     width: 100%;
-    /*  border-top: 1px solid var(--azul_escuro); */
     color: #ffffff;
     border: none;
     background-color: rgba(32, 61, 77, 0);
+}
+
+/* iPads, Tablets – 481px — 768px. */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 19px;
+    }
+
+    body {
+        background-color: #eeeeee;
+    }
+
+}
+
+/* Small screens, laptops – 769px — 1024px. */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+
+    /* body {
+        background-color: #007899;
+    } */
+
+}
+
+/* Desktops, large screens – 1025px — 1200px. */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+
+    body {
+        background-color: #b40d0d;
+    }
+
+}
+
+/* Extra large screens, TV – 1201px, and more. */
+@media screen and (min-width: 1201px) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        background-color: #1a0505;
+    }
+
 }
 
 
@@ -204,10 +244,9 @@ body {
 
 
 
-
 /* 
-    Mobile devices – 320px — 480px.
-    iPads, Tablets – 481px — 768px.
-    Small screens, laptops – 769px — 1024px.
-    Desktops, large screens – 1025px — 1200px.
-    Extra large screens, TV – 1201px, and more.*/
+Mobile devices – 320px — 480px.
+iPads, Tablets – 481px — 768px.
+Small screens, laptops – 769px — 1024px.
+Desktops, large screens – 1025px — 1200px.
+Extra large screens, TV – 1201px, and more.*/
