@@ -118,7 +118,7 @@ section {
     padding: 5px;
 }
 
-.do_article {
+.done_article {
     min-height: 4rem;
     width: 100%;
     margin-top: .6rem;
@@ -130,7 +130,7 @@ section {
 }
 
 .todo_article ul li,
-.do_article ul li {
+.done_article ul li {
     font-size: .8rem;
     color: var(--preto);
     padding-bottom: .8rem;
