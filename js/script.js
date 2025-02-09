@@ -85,7 +85,7 @@ const atualizarTodo = () => {
 
         let img = document.createElement("img");
         img.classList.add("task_icon");
-        img.src = "/icons/image2.svg";
+        img.src = "icons/image2.svg";
 
         div.appendChild(img);
         ul.appendChild(li);
@@ -114,7 +114,7 @@ const atualizarDone = () => {
 
         let img = document.createElement("img");
         img.classList.add("task_icon");
-        img.src = "/icons/image1.svg";
+        img.src = "icons/image1.svg";
 
         div.appendChild(img);
         ul.appendChild(li);
