@@ -11,12 +11,22 @@
 </head>
 
 <body>
+    <div class="side_menu">
+        <nav>
+            <button class="nav_menu nav_menu_color_mode" onclick="toggleColor()">Dark - Light mode</button>
+            <button class="nav_menu nav_menu_see_all" onclick="see_all()">Ver todas</button>
+            <button class="nav_menu nav_menu_only_todo" onclick="only_todo()">Apenas to-do</button>
+            <button class="nav_menu nav_menu_only_done" onclick="only_done()">Apenas done</button>
+        </nav>
+    </div>
     <header>
         <section class="header_sec">
             <div class="burguer_button_content">
-                <div class="burguer"></div>
-                <div class="burguer"></div>
-                <div class="burguer"></div>
+                <button class="button_none" onclick="toggleMenu()">
+                    <div class="burguer"></div>
+                    <div class="burguer"></div>
+                    <div class="burguer"></div>
+                </button>
             </div>
 
             <h1>Make your to-do list!</h1>
