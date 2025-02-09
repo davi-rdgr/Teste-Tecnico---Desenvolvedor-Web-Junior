@@ -158,8 +158,46 @@ section {
     right: 0;
 }
 
+body {
+    position: relative;
+}
 
 
+.side_menu {
+    height: 100vh;
+    width: 50%;
+    background-color: rgba(32, 61, 77, 0.945);
+    position: absolute;
+    transform: translateX(-100%);
+    z-index: 2;
+    transition: all .3s ease;
+}
+
+.side_menu nav {
+    margin-top: 50px;
+}
+
+
+/* arrumar */
+.button_none {
+    border: none;
+    color: none;
+    background-color: #ffffff;
+    z-index: 2;
+}
+
+.button_none:hover {
+    background-color: none;
+}
+
+.nav_menu {
+    height: 40px;
+    width: 100%;
+    /*  border-top: 1px solid var(--azul_escuro); */
+    color: #ffffff;
+    border: none;
+    background-color: rgba(32, 61, 77, 0);
+}
 
 
 
