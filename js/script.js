@@ -1,3 +1,5 @@
+/* Para funcionalidades relacionadas às tasks, arrays e mudanças de valores entre arrays  */
+
 /* recupera os dados salvos no local storage e adiciona nos array to_do e done */
 document.addEventListener("DOMContentLoaded", (e) => {
     arrayTask = JSON.parse(localStorage.getItem("to_do")) || [];
@@ -5,6 +7,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     atualizarTodo();
     atualizarDone();
 })
+
+/* função que atualiza o local storage baseado nos array to-do e done sempre que chamada. */
+const salvarLocalStorage = () => {
+    localStorage.setItem("to_do", JSON.stringify(arrayTask));
+    localStorage.setItem("done", JSON.stringify(arrayExclude));
+};
 
 /* arrays para guardar tasks to-do e done */
 let arrayTask = [];
@@ -14,7 +22,7 @@ let arrayExclude = [];
 let todoListsSection = document.querySelector(".todo_lists");
 let doneListsSection = document.querySelector(".done_lists");
 
-
+let task = document.querySelector('.main_input_task');
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -23,8 +31,6 @@ document.querySelector('form').addEventListener('submit', function (e) {
 
 /* função para adicionar uma task pegando o valor do input e adicionando no arrayTask, que guarda o to-do */
 const adicionarToDo = () => {
-    let task = document.querySelector('.main_input_task');
-
     if (task.value !== "") {
         arrayTask.push(task.value);
         task.value = "";
@@ -65,7 +71,6 @@ const atualizarTodo = () => {
     todoListsSection.innerHTML = "";
 
     arrayTask.forEach((e, index) => {
-        console.log(index);
         let article = document.createElement("article");
         article.classList.add("todo_article");
 
@@ -95,7 +100,6 @@ const atualizarDone = () => {
     doneListsSection.innerHTML = "";
 
     arrayExclude.forEach((e, index) => {
-        console.log(index);
         let article = document.createElement("article");
         article.classList.add("done_article");
 
@@ -120,76 +124,3 @@ const atualizarDone = () => {
     });
 
 }
-
-/* função que atualiza o local storage baseado nos array to-do e done sempre que chamada. */
-const salvarLocalStorage = () => {
-    localStorage.setItem("to_do", JSON.stringify(arrayTask));
-    localStorage.setItem("done", JSON.stringify(arrayExclude));
-};
-
-/* função para abrir e fechar o side button aplicando valores de estilização */
-let boolean_menu = false;
-let side_menu = document.querySelector(".side_menu");
-let burguer = document.querySelectorAll(".burguer");
-let button = document.querySelector(".button_none");
-const toggleMenu = () => {
-    if (!boolean_menu) {
-        side_menu.style.transform = "translateX(0%)";
-        button.style.backgroundColor = "rgba(32, 61, 77, 0.925)";
-        burguer.forEach((element) => {
-            element.style.background = "#ffffff";
-        });
-
-        boolean_menu = true;
-    } else if (boolean_menu) {
-        side_menu.style.transform = "translateX(-100%)";
-
-        button.style.backgroundColor = "#ffffff";
-        burguer.forEach((element) => {
-            element.style.background = "#203D4D";
-        });
-
-        boolean_menu = false;
-    }
-};
-
-
-
-/*  */
-const toggleCollor = () => { };
-const see_all = () => {
-    let todo_list_sec = document.querySelector(".todo_list_sec");
-    let dolist_sec = document.querySelector(".dolist_sec");
-    dolist_sec.style.display = "block";
-    todo_list_sec.style.display = "block";
-    side_menu.style.transform = "translateX(-100%)"
-    boolean_menu = false;
-    button.style.backgroundColor = "#ffffff";
-    burguer.forEach((element) => {
-        element.style.background = "#203D4D";
-    });
-};
-const only_todo = () => {
-    let todo_list_sec = document.querySelector(".todo_list_sec");
-    let dolist_sec = document.querySelector(".dolist_sec");
-    dolist_sec.style.display = "none";
-    todo_list_sec.style.display = "block";
-    side_menu.style.transform = "translateX(-100%)"
-    button.style.backgroundColor = "#ffffff";
-    burguer.forEach((element) => {
-        element.style.background = "#203D4D";
-    });
-    boolean_menu = false;
-};
-const only_done = () => {
-    let todo_list_sec = document.querySelector(".todo_list_sec");
-    let dolist_sec = document.querySelector(".dolist_sec");
-    dolist_sec.style.display = "block";
-    todo_list_sec.style.display = "none";
-    side_menu.style.transform = "translateX(-100%)"
-    button.style.backgroundColor = "#ffffff";
-    burguer.forEach((element) => {
-        element.style.background = "#203D4D";
-    });
-    boolean_menu = false;
-};
