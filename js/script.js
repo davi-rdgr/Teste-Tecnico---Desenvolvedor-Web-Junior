@@ -77,6 +77,7 @@ const atualizarTodo = () => {
         let ul = document.createElement("ul");
 
         let li = document.createElement("li");
+        li.classList.add("li");
         li.textContent = e;
 
         let div = document.createElement("div");
@@ -85,7 +86,7 @@ const atualizarTodo = () => {
 
         let img = document.createElement("img");
         img.classList.add("task_icon");
-        img.src = "icons/image2.svg";
+        img.src = "icons/darkmode_image2.svg";
 
         div.appendChild(img);
         ul.appendChild(li);
@@ -106,6 +107,7 @@ const atualizarDone = () => {
         let ul = document.createElement("ul");
 
         let li = document.createElement("li");
+        li.classList.add("li");
         li.textContent = e;
 
         let div = document.createElement("div");
@@ -113,8 +115,8 @@ const atualizarDone = () => {
         div.classList.add("task_list_check");
 
         let img = document.createElement("img");
-        img.classList.add("task_icon");
-        img.src = "icons/image1.svg";
+        img.classList.add("task_icon2");
+        img.src = "icons/darkmode_image1.svg";
 
         div.appendChild(img);
         ul.appendChild(li);
