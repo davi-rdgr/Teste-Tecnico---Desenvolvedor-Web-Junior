@@ -6,6 +6,7 @@
     --amarelo: #caca04;
     --azul: #1B4AC5;
     --azul_escuro: #203D4D;
+    --azulMaisEscuro: #12232c;
     --preto: #000000;
 }
 
@@ -14,10 +15,6 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
     html {
         font-size: 19px;
-    }
-
-    body {
-        background-color: #ad7171;
     }
 
 }
@@ -212,13 +209,3 @@
     }
 
 }
-
-
-
-
-/* 
-Mobile devices – 320px — 480px.
-iPads, Tablets – 481px — 768px.
-Small screens, laptops – 769px — 1024px.
-Desktops, large screens – 1025px — 1200px.
-Extra large screens, TV – 1201px, and more.*/

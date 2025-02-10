@@ -1,16 +1,15 @@
+/* Para funcionalidades relacionadas ao dark mode: */
+
 const cores = {
-    cinza: "#cccccc",
     branco: "#ffffff",
-    vermelho: "#ff0000",
-    verde: "#008000",
-    amarelo: "#caca04",
-    azul: "#1B4AC5",
     azulEscuro: "#203D4D",
+    azulMaisEscuro: "#12232c",
     preto: "#000000"
 };
-
+/* inicia o boleano que responde ao dark mode como falso */
 let boolean_color = false;
 
+/* função que captura os elementos que receberão o dark mode, faz um teste lógico e aplica dependendo do estado atual do boolean_color */
 const toggleColor = () => {
 
     let body = document.body;
@@ -19,11 +18,10 @@ const toggleColor = () => {
     let li = document.querySelectorAll(".li");
     let menu = document.querySelectorAll(".nav_menu_desk");
     let button_none = document.querySelector('.button_none');
-    let todoarticle = document.querySelector('.todo_article');
-
+    let burguer = document.querySelectorAll(".burguer");
 
     if (!boolean_color) {
-        body.style.backgroundColor = cores.azulEscuro;
+        body.style.backgroundColor = cores.azulMaisEscuro;
         h1.style.color = cores.branco;
         h2.forEach(e => {
             e.style.color = cores.branco;
@@ -32,10 +30,16 @@ const toggleColor = () => {
             e.style.color = cores.branco;
         });
         menu.forEach(e => {
-            e.style.backgroundColor = cores.azulEscuro;
+            e.style.backgroundColor = cores.azulMaisEscuro;
             e.style.color = cores.branco;
         });
 
+        button_none.style.backgroundColor = cores.azulMaisEscuro;
+        burguer.forEach(e => {
+            e.style.backgroundColor = cores.branco;
+        });
+
+        /* termina o loop declarando o boolean_color como true, para caso seja clicado novamente, ative o white mode */
         boolean_color = true;
     } else if (boolean_color) {
         body.style.backgroundColor = "initial"
@@ -52,9 +56,17 @@ const toggleColor = () => {
             e.style.color = cores.azulEscuro;
         });
 
+        button_none.style.backgroundColor = "initial";
+
+        burguer.forEach(e => {
+            e.style.backgroundColor = cores.branco;
+        });
+
         boolean_color = false;
     }
 };
+
+/* ----------------------------------------------------------------------------- */
 
 
 /* Para funcionalidades relacionadas às tasks, arrays e mudanças de valores entre arrays  */
@@ -81,6 +93,7 @@ let arrayExclude = [];
 let todoListsSection = document.querySelector(".todo_lists");
 let doneListsSection = document.querySelector(".done_lists");
 
+/* uso um addEventListner no formulário, para caso submit, chama a função para adicionar a task à lista */
 let task = document.querySelector('.main_input_task');
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -134,18 +147,16 @@ const atualizarDarkMode = () => {
     if (!boolean_color) {
         li_class.forEach(e => {
             e.style.color = cores.preto;
-            console.log("entrou 1")
         });
     } else {
         li_class.forEach(e => {
             e.style.color = cores.branco;
-            console.log("entrou 2")
         });
     }
 }
 
-/* for each que percorre o arrayTask e cria na tela todas task do array to-do. A div task_list_check contém um evento com clique
-que chama uma função que transfere a task da tabela to-do para done. */
+/* limpo a section contendo as tasks e faço um  for each que percorre o arrayTask e cria na tela todas task do array to-do. A div task_list_check 
+contém um evento com clique que chama uma função que transfere a task da tabela to-do para done. */
 const atualizarTodo = () => {
     todoListsSection.innerHTML = "";
 
@@ -205,3 +216,104 @@ const atualizarDone = () => {
     });
 
 }
+
+/* ----------------------------------------------------------------------------- */
+
+/* Para funcionalidades relacionadas ao botão lateral: */
+
+/* função para abrir e fechar o side button aplicando valores de estilização */
+let boolean_menu = false;
+let side_menu = document.querySelector(".side_menu");
+let burguer = document.querySelectorAll(".burguer");
+let button = document.querySelector(".button_none");
+
+const toggleMenu = () => {
+    if (!boolean_menu) {
+
+        side_menu.style.transform = "translateX(0%)";
+        /* faço esse teste lógico para que só aplique as mudanças na estilização caso o dark mode não esteja ativo*/
+        if (!boolean_color) {
+            button.style.backgroundColor = "#203d4d00";
+            burguer.forEach((element) => {
+                element.style.background = "#ffffff";
+            });
+        }
+
+        boolean_menu = true;
+    } else if (boolean_menu) {
+        side_menu.style.transform = "translateX(-100%)";
+
+        if (!boolean_color) {
+            button.style.backgroundColor = "#ffffff";
+            burguer.forEach((element) => {
+                element.style.background = "#203D4D";
+            });
+        }
+
+        boolean_menu = false;
+    }
+};
+
+/* capturo as sections que contém as task to-do e done */
+let todo_list_sec = document.querySelector(".todo_list_sec");
+let dolist_sec = document.querySelector(".dolist_sec");
+
+/* função para alterar o modo de visualização das tasks para: ver todas */
+const see_all = () => {
+    dolist_sec.style.display = "block";
+    todo_list_sec.style.display = "block";
+    side_menu.style.transform = "translateX(-100%)"
+    boolean_menu = false;
+    /* faço esse teste lógico usando o boleano que condiz com o dark mode, para dependendo se true ou false, estilize o botão na saída da forma correta */
+    if (!boolean_color) {
+        button.style.backgroundColor = cores.branco;
+        burguer.forEach((element) => {
+            element.style.background = cores.azulMaisEscuro;
+        });
+    } else if (boolean_color) {
+        button.style.backgroundColor = cores.azulMaisEscuro;
+        burguer.forEach((element) => {
+            element.style.background = cores.branco;
+        });
+    }
+};
+/* função para alterar o modo de visualização das tasks para: ver apenas to-do */
+const only_todo = () => {
+    dolist_sec.style.display = "none";
+    todo_list_sec.style.display = "block";
+    side_menu.style.transform = "translateX(-100%)"
+
+    if (!boolean_color) {
+        button.style.backgroundColor = cores.branco;
+        burguer.forEach((element) => {
+            element.style.background = cores.azulMaisEscuro;
+        });
+    } else if (boolean_color) {
+        button.style.backgroundColor = cores.azulMaisEscuro;
+        burguer.forEach((element) => {
+            element.style.background = cores.branco;
+        });
+    }
+    boolean_menu = false;
+};
+
+/* função para alterar o modo de visualização das tasks para: ver apenas done */
+const only_done = () => {
+    dolist_sec.style.display = "block";
+    todo_list_sec.style.display = "none";
+    side_menu.style.transform = "translateX(-100%)"
+    if (!boolean_color) {
+        button.style.backgroundColor = cores.branco;
+        burguer.forEach((element) => {
+            element.style.background = cores.azulMaisEscuro;
+        });
+    } else if (boolean_color) {
+        button.style.backgroundColor = cores.azulMaisEscuro;
+        burguer.forEach((element) => {
+            element.style.background = cores.branco;
+        });
+    }
+    boolean_menu = false;
+};
+
+/* ----------------------------------------------------------------------------- */
