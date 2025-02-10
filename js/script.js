@@ -1,3 +1,62 @@
+const cores = {
+    cinza: "#cccccc",
+    branco: "#ffffff",
+    vermelho: "#ff0000",
+    verde: "#008000",
+    amarelo: "#caca04",
+    azul: "#1B4AC5",
+    azulEscuro: "#203D4D",
+    preto: "#000000"
+};
+
+let boolean_color = false;
+
+const toggleColor = () => {
+
+    let body = document.body;
+    let h1 = document.querySelector('.header_sec_h1');
+    let h2 = document.querySelectorAll(".list_h2");
+    let li = document.querySelectorAll(".li");
+    let menu = document.querySelectorAll(".nav_menu_desk");
+    let button_none = document.querySelector('.button_none');
+    let todoarticle = document.querySelector('.todo_article');
+
+
+    if (!boolean_color) {
+        body.style.backgroundColor = cores.azulEscuro;
+        h1.style.color = cores.branco;
+        h2.forEach(e => {
+            e.style.color = cores.branco;
+        });
+        li.forEach(e => {
+            e.style.color = cores.branco;
+        });
+        menu.forEach(e => {
+            e.style.backgroundColor = cores.azulEscuro;
+            e.style.color = cores.branco;
+        });
+
+        boolean_color = true;
+    } else if (boolean_color) {
+        body.style.backgroundColor = "initial"
+        h1.style.color = cores.azulEscuro;
+        h2.forEach(e => {
+            e.style.color = "initial";
+        });
+        li.forEach(e => {
+            e.style.color = "initial";
+        });
+
+        menu.forEach(e => {
+            e.style.backgroundColor = cores.branco;
+            e.style.color = cores.azulEscuro;
+        });
+
+        boolean_color = false;
+    }
+};
+
+
 /* Para funcionalidades relacionadas às tasks, arrays e mudanças de valores entre arrays  */
 
 /* recupera os dados salvos no local storage e adiciona nos array to_do e done */
@@ -36,6 +95,7 @@ const adicionarToDo = () => {
         task.value = "";
         atualizarTodo();
         atualizarDone();
+        atualizarDarkMode();
         salvarLocalStorage();
         return;
     }
@@ -49,6 +109,7 @@ const adicionarDone = (ev, index) => {
         arrayTask.splice(index, 1)
         atualizarTodo()
         atualizarDone();
+        atualizarDarkMode();
         salvarLocalStorage();
     }
     return;
@@ -60,9 +121,27 @@ const removerDone = (ev, index) => {
         arrayExclude.splice(index, 1)
         atualizarTodo()
         atualizarDone();
+        atualizarDarkMode();
         salvarLocalStorage();
     }
     return;
+}
+
+/* teste para aplicar a estilização dark mode nos componentes criados novos enquanto dark mode está ativo.
+por padrão, os elementos vinham com a estilização do css. */
+const atualizarDarkMode = () => {
+    let li_class = document.querySelectorAll(".li");
+    if (!boolean_color) {
+        li_class.forEach(e => {
+            e.style.color = cores.preto;
+            console.log("entrou 1")
+        });
+    } else {
+        li_class.forEach(e => {
+            e.style.color = cores.branco;
+            console.log("entrou 2")
+        });
+    }
 }
 
 /* for each que percorre o arrayTask e cria na tela todas task do array to-do. A div task_list_check contém um evento com clique
@@ -111,7 +190,7 @@ const atualizarDone = () => {
         li.textContent = e;
 
         let div = document.createElement("div");
-        div.addEventListener('click', function (event) { removerDone(e, index) })
+        div.addEventListener('click', function (ev) { removerDone(e, index) })
         div.classList.add("task_list_check");
 
         let img = document.createElement("img");

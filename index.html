@@ -12,17 +12,18 @@
 </head>
 
 <body>
-    <section class="side_menu">
-        <nav>
-            <ul>
-                <li><button class="nav_menu nav_menu_color_mode" onclick="toggleColor()">Dark - Light mode</button></li>
-                <li><button class="nav_menu nav_menu_see_all" onclick="see_all()">Ver todas</button></li>
-                <li><button class="nav_menu nav_menu_only_todo" onclick="only_todo()">Apenas to-do</button></li>
-                <li><button class="nav_menu nav_menu_only_done" onclick="only_done()">Apenas done</button></li>
-            </ul>
-        </nav>
-    </section>
     <header>
+        <section class="side_menu">
+            <nav>
+                <ul>
+                    <li><button class="nav_menu nav_menu_color_mode" onclick="toggleColor()">Dark - Light mode</button>
+                    </li>
+                    <li><button class="nav_menu nav_menu_see_all" onclick="see_all()">Ver todas</button></li>
+                    <li><button class="nav_menu nav_menu_only_todo" onclick="only_todo()">Apenas to-do</button></li>
+                    <li><button class="nav_menu nav_menu_only_done" onclick="only_done()">Apenas done</button></li>
+                </ul>
+            </nav>
+        </section>
         <section class="header_sec">
             <div class="burguer_button_content">
                 <button class="button_none" onclick="toggleMenu()">
@@ -34,10 +35,10 @@
             <h1 class="header_sec_h1">Make your to-do list!</h1>
             <nav class="header_menu_desk">
                 <ul>
-                    <li><button onclick="toggleColor()">Dark mode</button></li>
-                    <li><button onclick="see_all()">Ver todas</button></li>
-                    <li><button onclick="only_todo()">Apenas to-do</button></li>
-                    <li><button onclick="only_done()">Apenas done</button></li>
+                    <li><button class="nav_menu_desk" onclick="toggleColor()">Dark mode</button></li>
+                    <li><button class="nav_menu_desk" onclick="see_all()">Ver todas</button></li>
+                    <li><button class="nav_menu_desk" onclick="only_todo()">Apenas to-do</button></li>
+                    <li><button class="nav_menu_desk" onclick="only_done()">Apenas done</button></li>
                 </ul>
             </nav>
             <div class="space_content"></div>
