@@ -190,6 +190,10 @@ section {
     background-color: rgba(32, 61, 77, 0);
 }
 
+.header_menu_desk {
+    display: none;
+}
+
 /* iPads, Tablets – 481px — 768px. */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -198,7 +202,7 @@ section {
     }
 
     body {
-        background-color: #eeeeee;
+        background-color: #ad7171;
     }
 
 }
@@ -210,8 +214,41 @@ section {
     }
 
     /* body {
-        background-color: #007899;
+        background-color: #71ad85;
     } */
+
+    .space_content {
+        display: none;
+    }
+
+    .burguer_button_content {
+        display: none;
+    }
+
+    .header_menu_desk {
+        display: block;
+    }
+
+    .header_menu_desk ul {
+        display: flex;
+    }
+
+    .header_menu_desk ul li button {
+        padding: .6rem;
+        margin: .5rem;
+        font-size: .9rem;
+        color: var(--azul_escuro);
+        background-color: var(--branco);
+        border: none;
+        border-left: 1px solid var(--cinza);
+        cursor: pointer;
+        transition: .2s all ease;
+        /* font-weight: 500; */
+    }
+
+    .header_sec h1 {
+        padding: .6rem;
+    }
 
 }
 
@@ -221,8 +258,41 @@ section {
         font-size: 18px;
     }
 
-    body {
-        background-color: #b40d0d;
+    /* body {
+        background-color: #71ad85;
+    } */
+
+    .space_content {
+        display: none;
+    }
+
+    .burguer_button_content {
+        display: none;
+    }
+
+    .header_menu_desk {
+        display: block;
+    }
+
+    .header_menu_desk ul {
+        display: flex;
+    }
+
+    .header_menu_desk ul li button {
+        padding: .6rem;
+        margin: .5rem;
+        font-size: .9rem;
+        color: var(--azul_escuro);
+        background-color: var(--branco);
+        border: none;
+        border-left: 1px solid var(--cinza);
+        cursor: pointer;
+        transition: .2s all ease;
+        /* font-weight: 500; */
+    }
+
+    .header_sec h1 {
+        padding: .6rem;
     }
 
 }
@@ -230,11 +300,44 @@ section {
 /* Extra large screens, TV – 1201px, and more. */
 @media screen and (min-width: 1201px) {
     html {
-        font-size: 16px;
+        font-size: 18px;
     }
 
-    body {
-        background-color: #1a0505;
+    /* body {
+        background-color: #71ad85;
+    } */
+
+    .space_content {
+        display: none;
+    }
+
+    .burguer_button_content {
+        display: none;
+    }
+
+    .header_menu_desk {
+        display: block;
+    }
+
+    .header_menu_desk ul {
+        display: flex;
+    }
+
+    .header_menu_desk ul li button {
+        padding: .6rem;
+        margin: .5rem;
+        font-size: .9rem;
+        color: var(--azul_escuro);
+        background-color: var(--branco);
+        border: none;
+        border-left: 1px solid var(--cinza);
+        cursor: pointer;
+        transition: .2s all ease;
+        /* font-weight: 500; */
+    }
+
+    .header_sec h1 {
+        padding: .6rem;
     }
 
 }

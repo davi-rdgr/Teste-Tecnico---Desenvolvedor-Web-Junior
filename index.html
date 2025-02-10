@@ -11,14 +11,16 @@
 </head>
 
 <body>
-    <div class="side_menu">
+    <section class="side_menu">
         <nav>
-            <button class="nav_menu nav_menu_color_mode" onclick="toggleColor()">Dark - Light mode</button>
-            <button class="nav_menu nav_menu_see_all" onclick="see_all()">Ver todas</button>
-            <button class="nav_menu nav_menu_only_todo" onclick="only_todo()">Apenas to-do</button>
-            <button class="nav_menu nav_menu_only_done" onclick="only_done()">Apenas done</button>
+            <ul>
+                <li><button class="nav_menu nav_menu_color_mode" onclick="toggleColor()">Dark - Light mode</button></li>
+                <li><button class="nav_menu nav_menu_see_all" onclick="see_all()">Ver todas</button></li>
+                <li><button class="nav_menu nav_menu_only_todo" onclick="only_todo()">Apenas to-do</button></li>
+                <li><button class="nav_menu nav_menu_only_done" onclick="only_done()">Apenas done</button></li>
+            </ul>
         </nav>
-    </div>
+    </section>
     <header>
         <section class="header_sec">
             <div class="burguer_button_content">
@@ -28,8 +30,15 @@
                     <div class="burguer"></div>
                 </button>
             </div>
-
             <h1>Make your to-do list!</h1>
+            <nav class="header_menu_desk">
+                <ul>
+                    <li><button onclick="toggleColor()">Dark mode</button></li>
+                    <li><button onclick="see_all()">Ver todas</button></li>
+                    <li><button onclick="only_todo()">Apenas to-do</button></li>
+                    <li><button onclick="only_done()">Apenas done</button></li>
+                </ul>
+            </nav>
             <div class="space_content"></div>
         </section>
     </header>
