@@ -66,7 +66,7 @@ section {
     margin: 4px;
 }
 
-.header_sec h1 {
+.header_sec_h1 {
     font-size: 1.1rem;
     color: var(--azul_escuro);
 }
@@ -86,6 +86,7 @@ section {
     padding: 5px;
     margin-right: 5px;
     width: 55%;
+    outline: none;
 }
 
 .main_input_submit {
@@ -97,6 +98,7 @@ section {
     background-color: var(--branco);
     color: #203D4D;
     font-weight: 500;
+    cursor: pointer;
 }
 
 /* Área to-do e done */
@@ -193,163 +195,3 @@ section {
 .header_menu_desk {
     display: none;
 }
-
-/* iPads, Tablets – 481px — 768px. */
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    html {
-        font-size: 19px;
-    }
-
-    body {
-        background-color: #ad7171;
-    }
-
-}
-
-/* Small screens, laptops – 769px — 1024px. */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    html {
-        font-size: 18px;
-    }
-
-    /* body {
-        background-color: #71ad85;
-    } */
-
-    .space_content {
-        display: none;
-    }
-
-    .burguer_button_content {
-        display: none;
-    }
-
-    .header_menu_desk {
-        display: block;
-    }
-
-    .header_menu_desk ul {
-        display: flex;
-    }
-
-    .header_menu_desk ul li button {
-        padding: .6rem;
-        margin: .5rem;
-        font-size: .9rem;
-        color: var(--azul_escuro);
-        background-color: var(--branco);
-        border: none;
-        border-left: 1px solid var(--cinza);
-        cursor: pointer;
-        transition: .2s all ease;
-        /* font-weight: 500; */
-    }
-
-    .header_sec h1 {
-        padding: .6rem;
-    }
-
-}
-
-/* Desktops, large screens – 1025px — 1200px. */
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
-    html {
-        font-size: 18px;
-    }
-
-    /* body {
-        background-color: #71ad85;
-    } */
-
-    .space_content {
-        display: none;
-    }
-
-    .burguer_button_content {
-        display: none;
-    }
-
-    .header_menu_desk {
-        display: block;
-    }
-
-    .header_menu_desk ul {
-        display: flex;
-    }
-
-    .header_menu_desk ul li button {
-        padding: .6rem;
-        margin: .5rem;
-        font-size: .9rem;
-        color: var(--azul_escuro);
-        background-color: var(--branco);
-        border: none;
-        border-left: 1px solid var(--cinza);
-        cursor: pointer;
-        transition: .2s all ease;
-        /* font-weight: 500; */
-    }
-
-    .header_sec h1 {
-        padding: .6rem;
-    }
-
-}
-
-/* Extra large screens, TV – 1201px, and more. */
-@media screen and (min-width: 1201px) {
-    html {
-        font-size: 18px;
-    }
-
-    /* body {
-        background-color: #71ad85;
-    } */
-
-    .space_content {
-        display: none;
-    }
-
-    .burguer_button_content {
-        display: none;
-    }
-
-    .header_menu_desk {
-        display: block;
-    }
-
-    .header_menu_desk ul {
-        display: flex;
-    }
-
-    .header_menu_desk ul li button {
-        padding: .6rem;
-        margin: .5rem;
-        font-size: .9rem;
-        color: var(--azul_escuro);
-        background-color: var(--branco);
-        border: none;
-        border-left: 1px solid var(--cinza);
-        cursor: pointer;
-        transition: .2s all ease;
-        /* font-weight: 500; */
-    }
-
-    .header_sec h1 {
-        padding: .6rem;
-    }
-
-}
-
-
-
-
-
-
-/* 
-Mobile devices – 320px — 480px.
-iPads, Tablets – 481px — 768px.
-Small screens, laptops – 769px — 1024px.
-Desktops, large screens – 1025px — 1200px.
-Extra large screens, TV – 1201px, and more.*/

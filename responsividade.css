@@ -1,0 +1,224 @@
+:root {
+    --cinza: #cccccc;
+    --branco: #ffffff;
+    --vermelho: #ff0000;
+    --verde: #008000;
+    --amarelo: #caca04;
+    --azul: #1B4AC5;
+    --azul_escuro: #203D4D;
+    --preto: #000000;
+}
+
+/* iPads, Tablets – 481px — 768px. */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 19px;
+    }
+
+    body {
+        background-color: #ad7171;
+    }
+
+}
+
+/* Small screens, laptops – 769px — 1024px. */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        font-size: 18px;
+    }
+
+    .space_content {
+        display: none;
+    }
+
+    .burguer_button_content {
+        display: none;
+    }
+
+    .header_menu_desk {
+        display: block;
+    }
+
+    .header_menu_desk ul {
+        display: flex;
+    }
+
+    .header_menu_desk ul li button {
+        padding: .9rem;
+        font-size: .9rem;
+        color: var(--azul_escuro);
+        background-color: var(--branco);
+        border: none;
+        border-left: 1px solid var(--cinza);
+        cursor: pointer;
+        transition: .2s all ease;
+    }
+
+    .header_menu_desk ul li button:hover {
+        background-color: var(--cinza);
+    }
+
+    .todo_content,
+    .do_content {
+        width: 70%;
+    }
+
+    .main_input_task {
+        max-width: 30%;
+    }
+
+    .main_input_submit {
+        max-width: 8rem;
+    }
+
+    .header_sec h1 {
+        padding: .6rem;
+    }
+}
+
+/* Desktops, large screens – 1025px — 1200px. */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+
+    .space_content {
+        display: none;
+    }
+
+    .burguer_button_content {
+        display: none;
+    }
+
+    .header_menu_desk {
+        display: block;
+    }
+
+    .header_menu_desk ul {
+        display: flex;
+    }
+
+    .header_sec {
+        justify-content: space-around;
+    }
+
+    .header_menu_desk ul li button {
+        padding: .9rem;
+        font-size: .9rem;
+        color: var(--azul_escuro);
+        background-color: var(--branco);
+        border: none;
+        border-left: 1px solid var(--cinza);
+        cursor: pointer;
+        transition: .2s all ease;
+    }
+
+    .header_menu_desk ul li button:hover {
+        background-color: var(--cinza);
+    }
+
+    .todo_content,
+    .do_content {
+        width: 70%;
+    }
+
+    .main_input_task {
+        max-width: 30%;
+    }
+
+    .main_input_submit {
+        max-width: 8rem;
+    }
+
+    .header_sec h1 {
+        padding: .6rem;
+    }
+}
+
+/* Extra large screens, TV – 1201px, and more. */
+@media screen and (min-width: 1201px) {
+    html {
+        font-size: 18px;
+    }
+
+    .space_content {
+        display: none;
+    }
+
+    .burguer_button_content {
+        display: none;
+    }
+
+    .header_menu_desk {
+        display: block;
+    }
+
+    .header_menu_desk ul {
+        display: flex;
+    }
+
+    .header_sec {
+        justify-content: space-around;
+    }
+
+    .header_menu_desk ul li button {
+        padding: .9rem;
+        font-size: .9rem;
+        color: var(--azul_escuro);
+        background-color: var(--branco);
+        border: none;
+        border-left: 1px solid var(--cinza);
+        cursor: pointer;
+        transition: .2s all ease;
+    }
+
+    .header_menu_desk ul li button:hover {
+        background-color: var(--cinza);
+    }
+
+    .todo_content,
+    .do_content {
+        width: 70%;
+    }
+
+    .main_input_task {
+        max-width: 30%;
+    }
+
+    .main_input_submit {
+        max-width: 8rem;
+    }
+
+    .header_sec h1 {
+        padding: .6rem;
+    }
+
+    .todo_lists,
+    .done_lists {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .todo_article,
+    .done_article {
+        width: 49%;
+        margin: 2px;
+    }
+
+    .todo_content,
+    .do_content {
+        max-width: 45%;
+    }
+
+}
+
+
+
+
+/* 
+Mobile devices – 320px — 480px.
+iPads, Tablets – 481px — 768px.
+Small screens, laptops – 769px — 1024px.
+Desktops, large screens – 1025px — 1200px.
+Extra large screens, TV – 1201px, and more.*/
