@@ -7,12 +7,13 @@
     <meta name="author" content="Davi Rodeghiero Souza">
     <meta name="description" content="To do List!">
     <title>To-do List!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsividade.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/responsividade.css">
 </head>
 
 <body>
-    <header>
+    <header class="header_content">
+        <!-- menu lateral para mobile -->
         <section class="side_menu">
             <nav>
                 <ul>
@@ -33,6 +34,7 @@
                 </button>
             </div>
             <h1 class="header_sec_h1">Make your to-do list!</h1>
+            <!-- menu principal para desktop -->
             <nav class="header_menu_desk">
                 <ul>
                     <li><button class="nav_menu_desk" onclick="toggleColor()">Dark mode</button></li>
@@ -44,7 +46,7 @@
             <div class="space_content"></div>
         </section>
     </header>
-    <main>
+    <main class="main_content">
         <section class="form_sec">
             <form submit="adicionarTaskSubmit" method="post">
                 <div class="main_form_style">
@@ -53,7 +55,7 @@
                 </div>
             </form>
         </section>
-
+        <!-- section que guarda a lista to-do -->
         <section class="todo_list_sec">
             <div class="todo_content">
                 <h2 class="list_h2">To do list</h2>
@@ -62,6 +64,7 @@
                 </section>
             </div>
         </section>
+        <!-- section que guarda a lista done -->
         <section class="dolist_sec">
             <div class="do_content">
                 <h2 class="list_h2">Done list</h2>
@@ -73,14 +76,6 @@
 
     </main>
     <script src="js/script.js"></script>
-    <script src="js/button.js"></script>
-    <script src="js/darkmode.js"></script>
-    <script>
-
-
-
-
-    </script>
 </body>
 
 </html>
