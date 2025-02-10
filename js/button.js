@@ -27,7 +27,7 @@ const toggleMenu = () => {
 };
 
 /*  */
-const toggleCollor = () => { };
+
 const see_all = () => {
     let todo_list_sec = document.querySelector(".todo_list_sec");
     let dolist_sec = document.querySelector(".dolist_sec");
