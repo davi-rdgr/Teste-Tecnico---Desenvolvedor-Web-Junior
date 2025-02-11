@@ -23,6 +23,7 @@
 - O dark / white mode e função de abrir e fechar menu lateral do mobile foram implementados fazendo testes com booleanos. Além disso, foi necessário fazer testes lógicos intermediários na aplicação do DOM nos componentes, para que não houvesse conflito com as cores dos componentes quando estavam ou não em dark mode e era aberto o menu lateral.
 - Na finalização do projeto, comentei todas funcionalidades lógicas e aspectos importantes para que haja bom entendimento. Mudei também a linguagem da tela, funções, variáveis e mais para inglês, mantendo uma acessibilidade global e padronizando melhor o código.
 - Primariamente, para manter a organização do código e melhor entendimento, a ideia seria separar a lógica em três arquivos: color mode (dark mode / white mode), funcionalidade dos botões (botão lateral, botões de ver conteúdo específico, etc.) e inserção / remoção de conteúdo nos array e local storage. Entretanto, devido a problemas com dependências de conteúdo de scrips diferentes, acabei optando por manter todo script no mesmo arquivo, mas separado e explicado por comentários.
+- A aplicação foi desenvolvida em duas branch diferentes para manter a organização e boas práticas com o GitHub, sendo elas: feature/01, para desenvolvimento geral da aplicação e feature/02, para responsividade e afins.
 
 ### Melhorias futuras para o projeto:
 
