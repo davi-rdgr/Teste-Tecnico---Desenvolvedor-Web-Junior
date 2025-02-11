@@ -34,14 +34,11 @@ body {
     position: relative;
 }
 
-section {
-    margin-bottom: 1rem;
+/* Header: */
+.header_content {
+    transition: all .2s ease;
 }
 
-/* Header: */
-/* main {
-    padding-top: 1rem;
-} */
 .header_sec {
     height: auto;
     border-bottom: 1px solid var(--cinza);
@@ -80,6 +77,8 @@ section {
 /* Área de adicionar */
 .main_content {
     height: 100vh;
+    padding-top: 1rem;
+    transition: .2s all ease;
 }
 
 .main_form_style {
@@ -123,6 +122,7 @@ section {
     font-size: 1.1rem;
     color: var(--azul_escuro);
     padding-bottom: .9rem;
+    margin-top: .5rem;
 }
 
 .todo_article {

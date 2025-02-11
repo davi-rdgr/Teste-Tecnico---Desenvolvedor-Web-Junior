@@ -1,10 +1,10 @@
 /* Para funcionalidades relacionadas ao dark mode: */
 
-const cores = {
-    branco: "#ffffff",
-    azulEscuro: "#203D4D",
-    azulMaisEscuro: "#12232c",
-    preto: "#000000"
+const colors = {
+    white: "#ffffff",
+    darkBlue: "#203D4D",
+    darkBlue2: "#12232c",
+    black: "#000000"
 };
 /* inicia o boleano que responde ao dark mode como falso */
 let boolean_color = false;
@@ -12,38 +12,47 @@ let boolean_color = false;
 /* função que captura os elementos que receberão o dark mode, faz um teste lógico e aplica dependendo do estado atual do boolean_color */
 const toggleColor = () => {
 
-    let body = document.body;
     let h1 = document.querySelector('.header_sec_h1');
     let h2 = document.querySelectorAll(".list_h2");
     let li = document.querySelectorAll(".li");
     let menu = document.querySelectorAll(".nav_menu_desk");
     let button_none = document.querySelector('.button_none');
     let burguer = document.querySelectorAll(".burguer");
+    let header = document.querySelector('.header_content');
+    let main = document.querySelector('.main_content');
+    let menu_darkmode = document.querySelectorAll(".nav_menu_color_mode");
+
 
     if (!boolean_color) {
-        body.style.backgroundColor = cores.azulMaisEscuro;
-        h1.style.color = cores.branco;
+        header.style.backgroundColor = colors.darkBlue2;
+        main.style.backgroundColor = colors.darkBlue2;
+        h1.style.color = colors.white;
         h2.forEach(e => {
-            e.style.color = cores.branco;
+            e.style.color = colors.white;
         });
         li.forEach(e => {
-            e.style.color = cores.branco;
+            e.style.color = colors.white;
         });
         menu.forEach(e => {
-            e.style.backgroundColor = cores.azulMaisEscuro;
-            e.style.color = cores.branco;
+            e.style.backgroundColor = colors.darkBlue2;
+            e.style.color = colors.white;
         });
 
-        button_none.style.backgroundColor = cores.azulMaisEscuro;
+        button_none.style.backgroundColor = colors.darkBlue2;
         burguer.forEach(e => {
-            e.style.backgroundColor = cores.branco;
+            e.style.backgroundColor = colors.white;
+        });
+
+        menu_darkmode.forEach(e => {
+            e.textContent = "White mode"
         });
 
         /* termina o loop declarando o boolean_color como true, para caso seja clicado novamente, ative o white mode */
         boolean_color = true;
     } else if (boolean_color) {
-        body.style.backgroundColor = "initial"
-        h1.style.color = cores.azulEscuro;
+        header.style.backgroundColor = "initial";
+        main.style.backgroundColor = "initial";
+        h1.style.color = colors.darkBlue;
         h2.forEach(e => {
             e.style.color = "initial";
         });
@@ -52,14 +61,18 @@ const toggleColor = () => {
         });
 
         menu.forEach(e => {
-            e.style.backgroundColor = cores.branco;
-            e.style.color = cores.azulEscuro;
+            e.style.backgroundColor = colors.white;
+            e.style.color = colors.darkBlue;
         });
 
         button_none.style.backgroundColor = "initial";
 
         burguer.forEach(e => {
-            e.style.backgroundColor = cores.branco;
+            e.style.backgroundColor = colors.white;
+        });
+
+        menu_darkmode.forEach(e => {
+            e.textContent = "Dark mode"
         });
 
         boolean_color = false;
@@ -75,12 +88,12 @@ const toggleColor = () => {
 document.addEventListener("DOMContentLoaded", (e) => {
     arrayTask = JSON.parse(localStorage.getItem("to_do")) || [];
     arrayExclude = JSON.parse(localStorage.getItem("done")) || [];
-    atualizarTodo();
-    atualizarDone();
+    updateTodo();
+    updateDone();
 })
 
 /* função que atualiza o local storage baseado nos array to-do e done sempre que chamada. */
-const salvarLocalStorage = () => {
+const saveLocalStorage = () => {
     localStorage.setItem("to_do", JSON.stringify(arrayTask));
     localStorage.setItem("done", JSON.stringify(arrayExclude));
 };
@@ -98,18 +111,18 @@ let task = document.querySelector('.main_input_task');
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    adicionarToDo();
+    addTodo();
 })
 
 /* função para adicionar uma task pegando o valor do input e adicionando no arrayTask, que guarda o to-do */
-const adicionarToDo = () => {
+const addTodo = () => {
     if (task.value !== "") {
         arrayTask.push(task.value);
         task.value = "";
-        atualizarTodo();
-        atualizarDone();
-        atualizarDarkMode();
-        salvarLocalStorage();
+        updateTodo();
+        updateDone();
+        updateDarkMode();
+        saveLocalStorage();
         return;
     }
     alert("Tente escrever uma mensagem para sua tarefa! :)")
@@ -120,44 +133,44 @@ const adicionarDone = (ev, index) => {
     if (ev) {
         arrayExclude.push(ev);
         arrayTask.splice(index, 1)
-        atualizarTodo()
-        atualizarDone();
-        atualizarDarkMode();
-        salvarLocalStorage();
+        updateTodo()
+        updateDone();
+        updateDarkMode();
+        saveLocalStorage();
     }
     return;
 }
 
 /* função que verifica se o valor é válido, se sim, remove o valor da tabela done */
-const removerDone = (ev, index) => {
+const removeDone = (ev, index) => {
     if (ev) {
         arrayExclude.splice(index, 1)
-        atualizarTodo()
-        atualizarDone();
-        atualizarDarkMode();
-        salvarLocalStorage();
+        updateTodo()
+        updateDone();
+        updateDarkMode();
+        saveLocalStorage();
     }
     return;
 }
 
 /* teste para aplicar a estilização dark mode nos componentes criados novos enquanto dark mode está ativo.
 por padrão, os elementos vinham com a estilização do css. */
-const atualizarDarkMode = () => {
+const updateDarkMode = () => {
     let li_class = document.querySelectorAll(".li");
     if (!boolean_color) {
         li_class.forEach(e => {
-            e.style.color = cores.preto;
+            e.style.color = colors.black;
         });
     } else {
         li_class.forEach(e => {
-            e.style.color = cores.branco;
+            e.style.color = colors.white;
         });
     }
 }
 
 /* limpo a section contendo as tasks e faço um  for each que percorre o arrayTask e cria na tela todas task do array to-do. A div task_list_check 
 contém um evento com clique que chama uma função que transfere a task da tabela to-do para done. */
-const atualizarTodo = () => {
+const updateTodo = () => {
     todoListsSection.innerHTML = "";
 
     arrayTask.forEach((e, index) => {
@@ -187,7 +200,7 @@ const atualizarTodo = () => {
 };
 
 /* for each que percorre o arrayExclude e cria na tela todas task do array done */
-const atualizarDone = () => {
+const updateDone = () => {
     doneListsSection.innerHTML = "";
 
     arrayExclude.forEach((e, index) => {
@@ -201,7 +214,7 @@ const atualizarDone = () => {
         li.textContent = e;
 
         let div = document.createElement("div");
-        div.addEventListener('click', function (ev) { removerDone(e, index) })
+        div.addEventListener('click', function (ev) { removeDone(e, index) })
         div.classList.add("task_list_check");
 
         let img = document.createElement("img");
@@ -266,14 +279,14 @@ const see_all = () => {
     boolean_menu = false;
     /* faço esse teste lógico usando o boleano que condiz com o dark mode, para dependendo se true ou false, estilize o botão na saída da forma correta */
     if (!boolean_color) {
-        button.style.backgroundColor = cores.branco;
+        button.style.backgroundColor = colors.white;
         burguer.forEach((element) => {
-            element.style.background = cores.azulMaisEscuro;
+            element.style.background = colors.darkBlue2;
         });
     } else if (boolean_color) {
-        button.style.backgroundColor = cores.azulMaisEscuro;
+        button.style.backgroundColor = colors.darkBlue2;
         burguer.forEach((element) => {
-            element.style.background = cores.branco;
+            element.style.background = colors.white;
         });
     }
 };
@@ -284,14 +297,14 @@ const only_todo = () => {
     side_menu.style.transform = "translateX(-100%)"
 
     if (!boolean_color) {
-        button.style.backgroundColor = cores.branco;
+        button.style.backgroundColor = colors.white;
         burguer.forEach((element) => {
-            element.style.background = cores.azulMaisEscuro;
+            element.style.background = colors.darkBlue2;
         });
     } else if (boolean_color) {
-        button.style.backgroundColor = cores.azulMaisEscuro;
+        button.style.backgroundColor = colors.darkBlue2;
         burguer.forEach((element) => {
-            element.style.background = cores.branco;
+            element.style.background = colors.white;
         });
     }
     boolean_menu = false;
@@ -303,14 +316,14 @@ const only_done = () => {
     todo_list_sec.style.display = "none";
     side_menu.style.transform = "translateX(-100%)"
     if (!boolean_color) {
-        button.style.backgroundColor = cores.branco;
+        button.style.backgroundColor = colors.white;
         burguer.forEach((element) => {
-            element.style.background = cores.azulMaisEscuro;
+            element.style.background = colors.darkBlue2;
         });
     } else if (boolean_color) {
-        button.style.backgroundColor = cores.azulMaisEscuro;
+        button.style.backgroundColor = colors.darkBlue2;
         burguer.forEach((element) => {
-            element.style.background = cores.branco;
+            element.style.background = colors.white;
         });
     }
     boolean_menu = false;

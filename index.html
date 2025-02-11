@@ -17,11 +17,11 @@
         <section class="side_menu">
             <nav>
                 <ul>
+                    <li><button class="nav_menu nav_menu_see_all" onclick="see_all()">See all</button></li>
+                    <li><button class="nav_menu nav_menu_only_todo" onclick="only_todo()">See to do</button></li>
+                    <li><button class="nav_menu nav_menu_only_done" onclick="only_done()">See done</button></li>
                     <li><button class="nav_menu nav_menu_color_mode" onclick="toggleColor()">Dark - Light mode</button>
                     </li>
-                    <li><button class="nav_menu nav_menu_see_all" onclick="see_all()">Ver todas</button></li>
-                    <li><button class="nav_menu nav_menu_only_todo" onclick="only_todo()">Apenas to-do</button></li>
-                    <li><button class="nav_menu nav_menu_only_done" onclick="only_done()">Apenas done</button></li>
                 </ul>
             </nav>
         </section>
@@ -37,10 +37,10 @@
             <!-- menu principal para desktop -->
             <nav class="header_menu_desk">
                 <ul>
-                    <li><button class="nav_menu_desk" onclick="toggleColor()">Dark mode</button></li>
-                    <li><button class="nav_menu_desk" onclick="see_all()">Ver todas</button></li>
-                    <li><button class="nav_menu_desk" onclick="only_todo()">Apenas to-do</button></li>
-                    <li><button class="nav_menu_desk" onclick="only_done()">Apenas done</button></li>
+                    <li><button class="nav_menu_desk" onclick="see_all()">See all</button></li>
+                    <li><button class="nav_menu_desk" onclick="only_todo()">See to do</button></li>
+                    <li><button class="nav_menu_desk" onclick="only_done()">See done</button></li>
+                    <li><button class="nav_menu_desk nav_menu_color_mode" onclick="toggleColor()">Dark mode</button></li>
                 </ul>
             </nav>
             <div class="space_content"></div>
@@ -50,8 +50,8 @@
         <section class="form_sec">
             <form submit="adicionarTaskSubmit" method="post">
                 <div class="main_form_style">
-                    <input class="main_input_task" type="text" name="tarefa" placeholder="Qual será sua tarefa ?">
-                    <input class="main_input_submit" type="submit" value="Adicionar!">
+                    <input class="main_input_task" type="text" name="tarefa" placeholder="What will be your task?">
+                    <input class="main_input_submit" type="submit" value="Add!">
                 </div>
             </form>
         </section>
